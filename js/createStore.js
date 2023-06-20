@@ -14,7 +14,7 @@ function createStore(reducer) {
   return {
     dispatch,
     getState
-  };
+  }; 
 };
 
 function reducer(state = { count: 0 }, action) {
@@ -33,9 +33,11 @@ function render() {
 };
 
 let store = createStore(reducer);
-store.dispatch({ type: '@@INIT' });
-let button = document.getElementById('button');
 
+store.dispatch({ type: '@@INIT' });
+
+
+let button = document.getElementById('button');
 button.addEventListener('click', () => {
     store.dispatch({ type: 'INCREASE_COUNT' });
 })
